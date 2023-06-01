@@ -1,0 +1,9 @@
+Back-End:
+    django
+    django rest framework
+
+
+front-end:
+    webpack
+    webpack-cli
+    
