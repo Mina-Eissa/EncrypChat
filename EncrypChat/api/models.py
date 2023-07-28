@@ -1,3 +1,3 @@
-from django.db import models
-
-# Create your models here.
+from .model.Member import Member
+from .model.Chat import Chat
+from .model.Message import Message

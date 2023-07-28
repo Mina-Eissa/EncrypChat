@@ -1,18 +1,8 @@
-Back-End:
-    django
-    djangorestframework
-
-
-front-end:
-    - react
-    - react dom
-    - webpack
-    - webpack-cli
-    - @babel/core: "Babel is a popular JavaScript compiler that converts modern JavaScript code (ES6+) into backward-compatible versions,
-     ensuring compatibility with older browsers and environments."
-    - babel-loader: "is a webpack loader that integrates Babel with the webpack build process.
-     It allows you to transpile JavaScript files using Babel during the webpack build. "
-    - @babel/preset-env: "is a preset that helps Babel determine the transformations required based on the target environments specified in the project configuration." 
-    - @babel/preset-react: "is a preset specifically designed for transpiling React code.(JSX)"
-    - @babel/plugin-proposal-class-properties: "is a Babel plugin that enables support for class properties in JavaScript."
-    - react-router-dom: "is a popular library in the React ecosystem that provides routing capabilities for building single-page applications." 
+asgiref==3.7.1
+Django==4.2.1
+djangorestframework==3.14.0
+mysqlclient==2.1.1
+Pillow==10.0.0
+pytz==2023.3
+sqlparse==0.4.4
+tzdata==2023.3
