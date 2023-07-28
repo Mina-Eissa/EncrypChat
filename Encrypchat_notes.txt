@@ -1,0 +1,6 @@
+backend:django - django rest framework
+frontend: react js 
+database: mysql 
+
+-Ensure that each model has its own set of unit tests to verify the seamless creation and functionality of the models. 
+-Each member is assigned a unique ID consisting of 7 capital characters. Subsequently, a folder is created for each member, housing all images that the user can attach. 
