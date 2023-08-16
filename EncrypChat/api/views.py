@@ -1,3 +1,2 @@
-from django.shortcuts import render
-
-# Create your views here.
+from .view.MessageListView import MessageListView
+Message_List = MessageListView.as_view()

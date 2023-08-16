@@ -1,13 +1,14 @@
-from datetime import date
+# tests.py
+
 from django.test import TestCase
-from ..models import Member, Chat, Message
+from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile
+from datetime import date
+from ..models import Chat, Message,Member
 from PIL import Image
 import io
 
-
-class MessageModelTest(TestCase):
-
+class MessageListViewTestCase(TestCase):
     def setUp(self):
         self.member1_data = {
             'Email': 'test1@example.com',
@@ -31,22 +32,18 @@ class MessageModelTest(TestCase):
             'Password': '1234password',
         }
         self.member2 = Member.objects.create(**self.member2_data)
-
         self.chat_data = {
             'MemOneID': self.member1,
             'MemTwoID': self.member2,
         }
         self.chat = Chat.objects.create(**self.chat_data)
-        self.chat_data['Wallpaper_Image'] = self.chat.get_chat_wallpaper_path(
-            'test_chat_wallpaper.png')
+        self.message1 = Message.objects.create(ChatID=self.chat, MsgBody='Hello', SendTime='2023-08-16T10:00:00Z')
+        self.message2 = Message.objects.create(ChatID=self.chat, MsgBody='Hi', SendTime='2023-08-16T11:00:00Z')
 
-        self.message_data = {
-            'ChatID': self.chat,
-            'MsgBody': "Hi,\n welcome to my app",
-        }
-        self.message = Message.objects.create(**self.message_data)
-
-    def test_message_creation(self):
-        # Check if the Chat instance was created correctly with the provided data
-        self.assertEqual(self.message.ChatID, self.message_data['ChatID'])
-        self.assertEqual(self.message.MsgBody, self.message_data['MsgBody'])
+    def test_get_messages_for_chat(self):
+        url = reverse('message-list', kwargs={'ChatID': self.chat.ChatID})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.data), 2)
+        self.assertEqual(response.data[0]['MsgBody'], 'Hello')
+        self.assertEqual(response.data[1]['MsgBody'], 'Hi')
