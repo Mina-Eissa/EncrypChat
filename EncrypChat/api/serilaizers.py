@@ -1,1 +1,2 @@
-from .serializer.MessageSerilaizer import MessageSerializer
+from .serializer.MessageSerializer import MessageSerializer
+from .serializer.ChatSerializer import ChatSerializer

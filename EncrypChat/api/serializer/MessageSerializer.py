@@ -3,9 +3,5 @@ from ..models import Message
 class MessageSerializer(ModelSerializer):
     class Meta:
         model = Message 
-        fields = [
-            'MsgBody',
-            'MsgImage',
-            'SendTime',
-        ]
+        fields = '__all__'
     
