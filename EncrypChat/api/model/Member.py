@@ -15,7 +15,7 @@ def member_image_path(instance, filename):
 class Member(models.Model):
     GenderTypes = [('Male', 'Male'), ('Female', 'Female')]
     ID = models.CharField(max_length=7, unique=True, default=generate_unique_id, primary_key=True)
-    Email = models.EmailField(unique=True)
+    Email = models.EmailField(unique=True,validators=[])
     FirstName = models.CharField(max_length=255, default='bruno')
     LastName = models.CharField(max_length=255, default='mars')
     BirthDate = models.DateField()

@@ -1,5 +1,5 @@
 from rest_framework.generics import ListAPIView
-from ..serilaizers import MessageSerializer
+from ..serializers import MessageSerializer
 from ..models import Message,Chat
 
 
