@@ -22,8 +22,8 @@ class Member(models.Model):
     Gender = models.CharField(max_length=255, choices=GenderTypes, default='Male')
     PhoneNumber = models.CharField(max_length=255, default='01012345678')
     CreatedAt = models.DateTimeField(auto_now_add=True)
-    PersonalImage = models.ImageField(upload_to=member_image_path)
-    PersonalBio = models.TextField()
+    PersonalImage = models.ImageField(upload_to=member_image_path,null=True)
+    PersonalBio = models.TextField(blank=True)
     Password = models.CharField(max_length=255)
 
 

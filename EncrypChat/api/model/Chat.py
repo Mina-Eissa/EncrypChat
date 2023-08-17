@@ -10,7 +10,7 @@ class Chat(models.Model):
     ChatID = models.CharField(max_length=255, primary_key=True, default=uuid.uuid4, editable=False)
     MemOneID = models.OneToOneField(Member, on_delete=models.CASCADE, related_name='mem1')
     MemTwoID = models.OneToOneField(Member, on_delete=models.CASCADE, related_name='mem2')
-    Wallpaper_Image = models.ImageField(upload_to=chat_wallpaper_path)
+    Wallpaper_Image = models.ImageField(upload_to=chat_wallpaper_path,null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
