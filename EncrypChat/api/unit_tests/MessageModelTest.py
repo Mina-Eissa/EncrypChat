@@ -42,6 +42,7 @@ class MessageModelTest(TestCase):
 
         self.message_data = {
             'ChatID': self.chat,
+            'Sender': self.member1,
             'MsgBody': "Hi,\n welcome to my app",
         }
         self.message = Message.objects.create(**self.message_data)

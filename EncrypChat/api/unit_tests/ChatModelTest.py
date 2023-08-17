@@ -56,3 +56,7 @@ class ChatModelTest(TestCase):
         self.assertEqual(self.chat.MemOneID, self.member1)
         self.assertEqual(self.chat.MemTwoID, self.member2)
         self.assertEqual(self.chat.Wallpaper_Image, self.chat_data['Wallpaper_Image'])
+    
+    def tearDown(self):
+        # Delete the temporary image file
+        self.chat.Wallpaper_Image.delete()

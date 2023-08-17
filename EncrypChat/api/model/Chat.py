@@ -3,7 +3,7 @@ from .Member import Member
 import uuid
 
 def chat_wallpaper_path(instance, filename):
-    # This function generates the path for storing the image based on the Member's ID
+    # This function generates the path for storing the image based on the Chat's ID
     return f'chats_wallpaper_images/{instance.ChatID}/{filename}'
 
 class Chat(models.Model):

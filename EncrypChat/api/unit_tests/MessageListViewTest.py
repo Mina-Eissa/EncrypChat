@@ -34,8 +34,8 @@ class MessageListViewTestCase(TestCase):
             'MemTwoID': self.member2,
         }
         self.chat = Chat.objects.create(**self.chat_data)
-        self.message1 = Message.objects.create(ChatID=self.chat, MsgBody='Hello', SendTime='2023-08-16T10:00:00Z')
-        self.message2 = Message.objects.create(ChatID=self.chat, MsgBody='Hi', SendTime='2023-08-16T11:00:00Z')
+        self.message1 = Message.objects.create(ChatID=self.chat,Sender=self.member1, MsgBody='Hello', SendTime='2023-08-16T10:00:00Z')
+        self.message2 = Message.objects.create(ChatID=self.chat,Sender=self.member1, MsgBody='Hi', SendTime='2023-08-16T11:00:00Z')
 
     def test_get_messages_for_chat(self):
         url = reverse('message-list', kwargs={'ChatID': self.chat.ChatID})
