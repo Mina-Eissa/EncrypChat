@@ -4,5 +4,6 @@ from .unit_tests.MessageModelTest import MessageModelTest
 from .unit_tests.MessageListViewTest import MessageListViewTestCase
 from .unit_tests.MessageCreateViewTest import MessageCreateViewTestCase 
 from .unit_tests.MemberCreateViewTest import MemberCreateViewTest
+from .unit_tests.MemberReadViewTest import MemberReadViewTest
 
 

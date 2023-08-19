@@ -1,10 +1,6 @@
 from datetime import date
 from django.test import TestCase
 from ..models import Member, Chat, Message
-from django.core.files.uploadedfile import SimpleUploadedFile
-from PIL import Image
-import io
-
 
 class MessageModelTest(TestCase):
 

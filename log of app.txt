@@ -1,0 +1,16 @@
+1- create New Member Api (for sign up) ✅
+    - handle email duplication ✅
+    - email verification (need to host this project)
+    - create super user to create token
+
+2- create New Chat
+3- create New Message (Send Message) ✅
+4- Update Member
+5- get Member (for sign in) ✅
+    - return token depend on creating super user
+
+6- Search for Member 
+7- Encrypted Message 
+8- create sign up and sign in pages 
+9- create Member details page
+10- create Conversations page 
