@@ -5,7 +5,7 @@ from ..models import Member
 from ..serializers import MemberSerializer
 
 
-class MemberReadView(generics.RetrieveAPIView):
+class MemberDetailsView(generics.RetrieveAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
     lookup_field = 'Email'

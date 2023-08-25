@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 from ..models import Member
 
-class MemberReadViewTest(TestCase):
+class MemberDetailsViewTest(TestCase):
     def setUp(self):
         self.member1_data = {
             'Email': 'test1@example.com',
@@ -18,6 +18,6 @@ class MemberReadViewTest(TestCase):
         Member.objects.create(**self.member1_data)
     
     def test_retrive_member(self):
-        url = reverse('member-read',kwargs={'Email':self.member1_data['Email']})
+        url = reverse('member-details',kwargs={'Email':self.member1_data['Email']})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
