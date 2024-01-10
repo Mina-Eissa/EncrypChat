@@ -1,4 +1,4 @@
-backend:django - django rest framework
+backend: django - django rest framework
 frontend: react js 
 database: mysql 
 
