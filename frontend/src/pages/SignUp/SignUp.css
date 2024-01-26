@@ -1,0 +1,115 @@
+.SignUp {
+  position: relative;
+  align-items: center;
+  width: 400px;
+  max-width: 100%;
+  height: 550px;
+  background: transparent;
+  backdrop-filter: blur(30px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(1, 73, 8, 0.3);
+  padding: 10px;
+  margin: 10% 0;
+}
+.SignUp-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+.SignUp-Field {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.SignUp-Field h4 {
+  margin: 0 0 10px 20px;
+  color: #d8e9a8;
+}
+
+.SignUp-Field input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  color: #d8e9a8;
+  font-size: 0.9em;
+  background-color: #272b27;
+}
+.SignUp-Field input::placeholder {
+  color: #d8e9a8;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+.SignUp-double-division {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.SignUp-Button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.SignUp-Button .SignUp-Submit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  width: 60%;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #4e9f3d;
+  color: #d8e9a8;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(1, 73, 8, 0.5);
+}
+.SignUp-Button .SignUp-Submit:hover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  width: 60%;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #d8e9a8;
+  color: #4e9f3d;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 50px;
+  font-weight: 500;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+.SignUp-move-to-signup {
+  display: flex;
+  color: #d8e9a8;
+  justify-content: center;
+}
+
+.SignUp-move-to-signup a {
+  margin: 5px;
+  color: #d8e9a8;
+}
+.SignUp-move-to-signup a:hover {
+  color: #4e9f3d;
+}
