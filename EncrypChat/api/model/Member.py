@@ -14,7 +14,7 @@ def member_image_path(instance, filename):
 
 class Member(models.Model):
     GenderTypes = [('Male', 'Male'), ('Female', 'Female')]
-    ID = models.CharField(max_length=7, unique=True, default=generate_unique_id, primary_key=True)
+    id = models.CharField(max_length=7, unique=True, default=generate_unique_id, primary_key=True)
     Email = models.EmailField(unique=True,validators=[])
     FirstName = models.CharField(max_length=255, default='bruno')
     LastName = models.CharField(max_length=255, default='mars')
@@ -31,6 +31,10 @@ class Member(models.Model):
         return f'{self.FirstName} {self.LastName}'
     
     def save(self, *args, **kwargs):
+        # Generate a unique ID if the object doesn't have one
+        if not self.pk:
+            self.id = self.generate_unique_id()
+
         # Hash the password before saving
         self.Password = make_password(self.Password)
         super().save(*args, **kwargs)
@@ -48,7 +52,7 @@ class Member(models.Model):
             unique_id = generate_unique_id()
             try:
                 with models.transaction.atomic():
-                    cls.objects.create(ID=unique_id)
+                    cls.objects.create(id=unique_id)
                 return unique_id
             except models.IntegrityError:
                 pass

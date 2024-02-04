@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SignUp.css';
 const SignUp = () => {
+    const [token, setToken] = useState();
     const [SignUp_MemberData, setSignUp_MemberData] = useState({
-        MemberName: '',
+        MemberFirstName: '',
+        MemberLastName:'',
         MemberEmail: '',
         MemberPhoneNumber: '',
         MemberPassword: '',
@@ -22,21 +24,25 @@ const SignUp = () => {
             alert("Password don't match confirmed password");
             return
         }
-        console.log(SignUp_MemberData);
         try {
             const response = await axios.post(`http://localhost:8000/api/sign-up/`, {
-                Name: SignUp_MemberData.MemberName,
+                FirstName: SignUp_MemberData.MemberFirstName,
+                LastName:SignUp_MemberData.MemberLastName,
                 Email: SignUp_MemberData.MemberEmail,
                 PhoneNumber: SignUp_MemberData.MemberPhoneNumber,
                 Password: SignUp_MemberData.MemberPassword,
                 BirthDate:SignUp_MemberData.MemberBirthDate
             });
-            console.log(response.status)
+
+            //console.log(response.data['token']);
+            setToken(response.data['token'])
+
             alert(`Member ${SignUp_MemberData.MemberName} is successfully created`);
+
             // If response is successful, navigate to inactive page
             navigate('/inactive');
         } catch (error) {
-            alert(`Member ${SignUp_MemberData.MemberEmail} doesn't signed up`);
+            alert(`Member ${SignUp_MemberData.MemberFirstName} ${SignUp_MemberData.MemberLastName} alreadt exists, try to sign in`);
             // Handle authentication error, display error message to the user
         }
     };
@@ -46,13 +52,20 @@ const SignUp = () => {
                 <h1>Sign-Up</h1>
             </div>
             <div className="SignUp-Field">
-                <h4>User Name</h4>
-                <input type='text' placeholder='username' name='MemberName' value={SignUp_MemberData.MemberName} onChange={handleChange} />
-            </div>
-            <div className="SignUp-Field">
                 <h4>E-mail</h4>
                 <input type='email' placeholder='example@example.com' name='MemberEmail' value={SignUp_MemberData.MemberEmail} onChange={handleChange} />
             </div>
+            <div className='SignUp-double-division'>
+                <div className="SignUp-Field">
+                    <h4>First Name</h4>
+                    <input type='text' placeholder='firstname' name='MemberFirstName' value={SignUp_MemberData.MemberFirstName} onChange={handleChange} />
+                </div>
+                <div className="SignUp-Field">
+                    <h4>Last Name</h4>
+                <input type='text' placeholder='lastname' name='MemberLastName' value={SignUp_MemberData.MemberLastName} onChange={handleChange} />
+            </div>
+            </div>
+            
             <div className='SignUp-double-division'>
                 <div className="SignUp-Field">
                     <h4>Phone Number</h4>

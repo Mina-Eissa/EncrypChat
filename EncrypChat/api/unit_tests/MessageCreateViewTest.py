@@ -37,7 +37,7 @@ class MessageCreateViewTestCase(TestCase):
         self.chat = Chat.objects.create(**self.chat_data)
         self.message_data = {
             'ChatID': self.chat.ChatID,
-            'Sender': self.member1.ID,
+            'Sender': self.member1.id,
             'MsgBody': 'Hello',
             'SendTime': '2023-08-16T10:00:00Z'
         }

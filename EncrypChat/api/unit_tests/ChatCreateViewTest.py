@@ -29,8 +29,8 @@ class ChatCreateViewTest(TestCase):
         }
         self.member2 = Member.objects.create(**self.member2_data)
         self.chat_data = {
-            'MemOneID': self.member1.ID,
-            'MemTwoID': self.member2.ID,
+            'MemOneID': self.member1.id,
+            'MemTwoID': self.member2.id,
         }
 
     def test_chat_creation(self):
